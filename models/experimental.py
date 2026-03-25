@@ -8,7 +8,10 @@ import torch
 import torch.nn as nn
 from ultralytics.utils.patches import torch_load
 
-from utils.downloads import attempt_download
+try :
+    from ..utils.downloads import attempt_download
+except ImportError:
+    from utils.downloads import attempt_download
 
 
 class Sum(nn.Module):

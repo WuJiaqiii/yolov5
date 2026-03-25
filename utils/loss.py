@@ -4,8 +4,12 @@
 import torch
 import torch.nn as nn
 
-from utils.metrics import bbox_iou
-from utils.torch_utils import de_parallel
+try:
+    from .metrics import bbox_iou
+    from .torch_utils import de_parallel    
+except ImportError:
+    from utils.metrics import bbox_iou
+    from utils.torch_utils import de_parallel
 
 
 def smooth_BCE(eps=0.1):
