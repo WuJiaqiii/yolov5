@@ -490,7 +490,10 @@ class DetectMultiBackend(nn.Module):
         #   TensorFlow Lite:                *.tflite
         #   TensorFlow Edge TPU:            *_edgetpu.tflite
         #   PaddlePaddle:                   *_paddle_model
-        from models.experimental import attempt_download, attempt_load  # scoped to avoid circular import
+        try:
+            from .experimental import attempt_download, attempt_load
+        except ImportError:
+            from models.experimental import attempt_download, attempt_load  # scoped to avoid circular import
 
         super().__init__()
         w = str(weights[0] if isinstance(weights, list) else weights)
@@ -809,8 +812,12 @@ class DetectMultiBackend(nn.Module):
         Example: path='path/to/model.onnx' -> type=onnx
         """
         # types = [pt, jit, onnx, xml, engine, coreml, saved_model, pb, tflite, edgetpu, tfjs, paddle]
-        from export import export_formats
-        from utils.downloads import is_url
+        try:
+            from ..export import export_formats
+            from ..utils.downloads import is_url
+        except ImportError:
+            from export import export_formats
+            from utils.downloads import is_url
 
         sf = list(export_formats().Suffix)  # export suffixes
         if not is_url(p, check=False):
