@@ -1,4 +1,4 @@
-path: /media/kaneki/5490675f-8f6a-4932-bae3-f457edde3ca0/wujiaqi/UAV/output
+path: /media/kaneki/5490675f-8f6a-4932-bae3-f457edde3ca0/wujiaqi/code/data/dataset
 train: images/train
 val: images/val
 nc: 1
