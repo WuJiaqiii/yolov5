@@ -1,0 +1,8 @@
+# YOLOv5 数据集配置文件
+path: /media/kaneki/5490675f-8f6a-4932-bae3-f457edde3ca0/wujiaqi/yolo_train_dataset/yolo_dataset
+train: images/train
+val: images/val
+# test:  # 无测试集
+
+nc: 3
+names: ['0', '1', '2']
