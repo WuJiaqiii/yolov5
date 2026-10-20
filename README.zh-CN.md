@@ -156,7 +156,7 @@ python detect.py --weights yolov5s.pt --source 'rtsp://example.com/media.mp4'
 python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml --batch-size 128
 
 # 在 COCO 上训练 YOLOv5s 300 个周期
-python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5s.yaml --batch-size 64
+python train.py --data uav.yaml --epochs 300 --weights '' --cfg yolov5s.yaml --batch-size 64
 
 # 在 COCO 上训练 YOLOv5m 300 个周期
 python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5m.yaml --batch-size 40
